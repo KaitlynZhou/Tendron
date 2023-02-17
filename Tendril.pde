@@ -1,7 +1,7 @@
 class Tendril
 {
   public final static int SEG_LENGTH = 4; //length of each segment in the tendril
-  private int myNumSegments, myX, myY;
+  private int myNumSegments, myX, myY, myColor;
   private double myAngle;
   
   /**
@@ -17,12 +17,14 @@ class Tendril
     myX = x;
     myY = y;
     myAngle = theta;
+    myColor = color((int)(Math.random()*220+100),75,75);
   }
   public void show()
   {
     //your code here
     float startX = myX;
     float startY = myY;
+    stroke(myColor);
     for(int i = 0; i<myNumSegments; i++){
       myAngle+=Math.random()*0.4-0.2;
       float endX = startX+cos((float)myAngle)*SEG_LENGTH;
@@ -31,8 +33,8 @@ class Tendril
       startX = endX;
       startY = endY;
     }
-    if(myNumSegments>=3){
-      Cluster x = new Cluster(myNumSegments/4, (int)startX, (int)startY);
+    if(myNumSegments>=5){
+      Cluster x = new Cluster(myNumSegments/3, (int)startX, (int)startY);
     }
   }
 }
