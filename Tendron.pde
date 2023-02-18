@@ -25,16 +25,10 @@ public void draw(){
   //snout
   fill(#FFDDA5);
   ellipse(250,300,110,90);
-  
-  //nose
-  fill(0,0,0);
-  strokeWeight(20);
-  strokeJoin(ROUND);
-  triangle(275,280,300,280,187.5,325);
-  strokeWeight(3);
-  
+    
   //mouth
   noFill();
+  strokeWeight(2);
   stroke(0,0,0);
   arc(200,280,100,150,0,PI/4);
   arc(300,280,100,150,(3*PI)/4,PI);
@@ -47,6 +41,14 @@ public void draw(){
   line(250,285,329,300);
   line(250,285,329,280);
   line(250,285,329,260);
+  
+  //nose
+  fill(#644115);
+  stroke(#644115);
+  strokeWeight(10);
+  strokeJoin(ROUND);
+  triangle(225+12.5,270,250,290,275-12.5,270);
+  strokeWeight(3);
 }
 public void mousePressed(){
   redraw();
